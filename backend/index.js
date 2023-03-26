@@ -17,7 +17,7 @@ mongoose.connect(
 app.use(cors());
 app.use(express.json());
 
-// app.use("/api/bookings", bookings);
+app.use("/api/bookings", bookings);
 app.use("/api/users", users);
 
 app.listen(8800, () => {

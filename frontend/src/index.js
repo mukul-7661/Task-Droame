@@ -5,17 +5,26 @@ import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreateUser from "./components/CreateUser";
 import Users from "./components/Users";
-import EditUser from "./components/EditUser";
+import CreateBooking from "./components/CreateBooking";
+import Bookings from "./components/Bookings";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route
-        path="/editUser"
+        path="/createBooking"
         element={
           <div>
-            <EditUser />
+            <CreateBooking />
+          </div>
+        }
+      ></Route>
+      <Route
+        path="/bookings"
+        element={
+          <div>
+            <Bookings />
           </div>
         }
       ></Route>

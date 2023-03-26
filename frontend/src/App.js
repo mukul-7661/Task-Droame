@@ -12,7 +12,13 @@ function App() {
       >
         See users
       </button>
-      <button>See bookings</button>
+      <button
+        onClick={() => {
+          navigate("/bookings");
+        }}
+      >
+        See bookings
+      </button>
     </div>
   );
 }
