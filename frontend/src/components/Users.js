@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 import User from "./User";
+import "./Users.css";
 
 const Users = () => {
   const navigate = useNavigate();
@@ -33,14 +34,17 @@ const Users = () => {
   }, [getData]);
   return (
     <div>
-      {users}
-      <button
-        onClick={() => {
-          navigate("/createUser");
-        }}
-      >
-        Add User
-      </button>
+      <div className="add__button__container">
+        <button
+          className="add__button"
+          onClick={() => {
+            navigate("/createUser");
+          }}
+        >
+          Add User
+        </button>
+      </div>
+      <div className="items__container">{users}</div>
     </div>
   );
 };

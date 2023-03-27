@@ -23,7 +23,7 @@ router.post("/create", async (req, res) => {
       drone_shot_id: req.body.drone_shot_id,
       createdTime: req.body.createdTime,
     });
-    newBooking.save();
+    await newBooking.save();
 
     res.status(200);
   } catch (err) {

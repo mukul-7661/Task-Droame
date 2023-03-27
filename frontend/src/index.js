@@ -7,6 +7,7 @@ import CreateUser from "./components/CreateUser";
 import Users from "./components/Users";
 import CreateBooking from "./components/CreateBooking";
 import Bookings from "./components/Bookings";
+import Navigation from "./components/Navigation";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -16,6 +17,7 @@ root.render(
         path="/createBooking"
         element={
           <div>
+            <Navigation />
             <CreateBooking />
           </div>
         }
@@ -24,6 +26,7 @@ root.render(
         path="/bookings"
         element={
           <div>
+            <Navigation />
             <Bookings />
           </div>
         }
@@ -32,6 +35,7 @@ root.render(
         path="/createUser"
         element={
           <div>
+            <Navigation />
             <CreateUser />
           </div>
         }
@@ -40,6 +44,7 @@ root.render(
         path="/users"
         element={
           <div>
+            <Navigation />
             <Users />
           </div>
         }
@@ -48,6 +53,7 @@ root.render(
         path="/"
         element={
           <div>
+            <Navigation />
             <App />
           </div>
         }

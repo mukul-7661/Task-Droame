@@ -35,14 +35,17 @@ const Bookings = () => {
   }, [getData]);
   return (
     <div>
-      {bookings}
-      <button
-        onClick={() => {
-          navigate("/createBooking");
-        }}
-      >
-        Add booking
-      </button>
+      <div className="add__button__container">
+        <button
+          className="add__button"
+          onClick={() => {
+            navigate("/createBooking");
+          }}
+        >
+          Add Booking
+        </button>
+      </div>
+      <div className="items__container">{bookings}</div>
     </div>
   );
 };

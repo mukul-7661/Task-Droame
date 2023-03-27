@@ -1,0 +1,26 @@
+.header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #5881b6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: space-evenly;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header_button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.header_button:hover {
+  background-color: #289879;
+}

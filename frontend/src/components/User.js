@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
+import "./User.css";
 
 function User(props) {
   const [username, setUsername] = useState();
@@ -40,47 +41,92 @@ function User(props) {
 
   const [edit, setEdit] = useState(false);
   return (
-    <div>
+    <div className="items__box">
       {!edit && (
         <div>
-          <p>{props.email}</p>
-          <p>{props.username}</p>
-          <p>{props.password}</p>
-          <p>{props.phone_number}</p>
-          <button onClick={editClickhandler}>Edit user</button>
+          <table>
+            <tr>
+              <td>Email</td>
+              <td>{props.email}</td>
+            </tr>
+            <tr>
+              <td>Username</td>
+              <td>{props.username}</td>
+            </tr>
+            <tr>
+              <td>Password</td>
+              <td>{props.password}</td>
+            </tr>
+            <tr>
+              <td>Phone Number</td>
+              <td>{props.phone_number}</td>
+            </tr>
+          </table>
+
+          <button className="items__button" onClick={editClickhandler}>
+            Edit user
+          </button>
         </div>
       )}
       {edit && (
         <div>
           <form>
-            <input
-              value={username}
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-            ></input>
-            <input
-              value={email}
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-            ></input>
-            <input
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-            ></input>
-            <input
-              value={phone_number}
-              onChange={(event) => {
-                setPhone_number(event.target.value);
-              }}
-            ></input>
-            <button type="submit" onClick={submithandler}>
+            <table>
+              <tr>
+                {/* <td>Enter Email</td>
+                <td>
+                  <input
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value);
+                    }}
+                  ></input>
+                </td> */}
+              </tr>
+              <tr>
+                <td>Enter Username</td>
+                <td>
+                  <input
+                    value={username}
+                    onChange={(event) => {
+                      setUsername(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+              <tr>
+                <td>Enter Password</td>
+                <td>
+                  <input
+                    value={password}
+                    onChange={(event) => {
+                      setPassword(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+              <tr>
+                <td>Enter Phone No.</td>
+                <td>
+                  <input
+                    value={phone_number}
+                    onChange={(event) => {
+                      setPhone_number(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+            </table>
+
+            <button
+              className="items__button"
+              type="submit"
+              onClick={submithandler}
+            >
               Submit
             </button>
             <button
+              className="items__button"
               onClick={() => {
                 setEdit(false);
               }}

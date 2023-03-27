@@ -15,9 +15,12 @@ function Booking(props) {
     setBooking_id(props.booking_id);
   };
 
-  const deleteClickHandler = () => {
+  const deleteClickHandler = async () => {
     setBooking_id(props.booking_id);
-    Axios.delete(`http://localhost:8800/api/bookings/delete/${booking_id}`)
+    // console.log(boo)
+    Axios.delete(
+      `http://localhost:8800/api/bookings/delete/${props.booking_id}`
+    )
       .then((res) => {
         console.log(res);
       })
@@ -51,48 +54,94 @@ function Booking(props) {
 
   const [edit, setEdit] = useState(false);
   return (
-    <div>
+    <div className="items__box">
       {!edit && (
         <div>
-          <p>{props.location_id}</p>
-          <p>{props.booking_id}</p>
-          <p>{props.drone_shot_id}</p>
-          <p>{props.createdTime}</p>
-          <button onClick={editClickhandler}>Edit Booking</button>
-          <button onClick={deleteClickHandler}>Delete Booking</button>
+          <table>
+            <tr>
+              <td>Booking Id</td>
+              <td>{props.booking_id}</td>
+            </tr>
+            <tr>
+              <td>Location Id</td>
+              <td>{props.location_id}</td>
+            </tr>
+            <tr>
+              <td>DroneShot Id</td>
+              <td>{props.drone_shot_id}</td>
+            </tr>
+            <tr>
+              <td>Created time</td>
+              <td>{props.createdTime}</td>
+            </tr>
+          </table>
+
+          <button className="items__button" onClick={editClickhandler}>
+            Edit Booking
+          </button>
+          <button className="items__button" onClick={deleteClickHandler}>
+            Delete Booking
+          </button>
         </div>
       )}
       {edit && (
         <div>
           <form>
-            <input
-              value={booking_id}
-              onChange={(event) => {
-                setBooking_id(event.target.value);
-              }}
-            ></input>
-            <input
-              value={location_id}
-              onChange={(event) => {
-                setLocation_id(event.target.value);
-              }}
-            ></input>
-            <input
-              value={drone_shot_id}
-              onChange={(event) => {
-                setDrone_shot_id(event.target.value);
-              }}
-            ></input>
-            <input
-              value={createdTime}
-              onChange={(event) => {
-                setCreatedTime(event.target.value);
-              }}
-            ></input>
-            <button type="submit" onClick={submithandler}>
+            <table>
+              <tr>
+                {/* <td>Enter BookingId</td>
+                <td>
+                  <input
+                    value={booking_id}
+                    onChange={(event) => {
+                      setBooking_id(event.target.value);
+                    }}
+                  ></input>
+                </td> */}
+              </tr>
+              <tr>
+                <td>Enter LocationId</td>
+                <td>
+                  <input
+                    value={location_id}
+                    onChange={(event) => {
+                      setLocation_id(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+              <tr>
+                <td>Enter DroneShotId</td>
+                <td>
+                  <input
+                    value={drone_shot_id}
+                    onChange={(event) => {
+                      setDrone_shot_id(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+              <tr>
+                <td>Enter Created Time</td>
+                <td>
+                  <input
+                    value={createdTime}
+                    onChange={(event) => {
+                      setCreatedTime(event.target.value);
+                    }}
+                  ></input>
+                </td>
+              </tr>
+            </table>
+            <button
+              className="items__button"
+              type="submit"
+              onClick={submithandler}
+            >
               Submit
             </button>
             <button
+              className="items__button"
               onClick={() => {
                 setEdit(false);
               }}

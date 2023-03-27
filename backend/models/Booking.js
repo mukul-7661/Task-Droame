@@ -6,8 +6,6 @@ const BookingSchema = new mongoose.Schema(
       type: String,
       // required: true,
       unique: true,
-      min: 3,
-      max: 20,
     },
     location_id: {
       type: String,

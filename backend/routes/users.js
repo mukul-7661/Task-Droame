@@ -22,7 +22,7 @@ router.post("/create", async (req, res) => {
       password: req.body.password,
       phone_number: req.body.phone_number,
     });
-    newUser.save();
+    await newUser.save();
 
     res.status(200);
   } catch (err) {
@@ -35,7 +35,7 @@ router.post("/create", async (req, res) => {
 router.put("/edit", async (req, res) => {
   try {
     console.log("edit");
-    User.updateOne(
+    await User.updateOne(
       { email: req.body.email },
       {
         $set: {

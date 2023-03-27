@@ -1,0 +1,37 @@
+.items__box {
+  margin: 40px;
+}
+
+input {
+  height: 30px;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.items__button {
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+  background-color: #cbd2d2;
+}
+
+.items__button:hover {
+  background-color: #dccf57;
+}
