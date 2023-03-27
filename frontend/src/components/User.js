@@ -20,7 +20,7 @@ function User(props) {
     e.preventDefault();
     // console.log("hello");
 
-    Axios.put("http://localhost:8800/api/users/edit", {
+    Axios.put("https://droame-task-api.onrender.com/api/users/edit", {
       username: username,
       email: email,
       password: password,

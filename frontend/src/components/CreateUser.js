@@ -14,7 +14,7 @@ function CreateUser() {
   const submithandler = async (e) => {
     e.preventDefault();
     // console.log("hello");
-    Axios.post("http://localhost:8800/api/users/create", {
+    Axios.post("https://droame-task-api.onrender.com/api/users/create", {
       username: username,
       email: email,
       password: password,

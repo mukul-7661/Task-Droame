@@ -10,7 +10,7 @@ const Bookings = () => {
 
   const getData = async () => {
     const response = await Axios.get(
-      "http://localhost:8800/api/bookings/getAll"
+      "https://droame-task-api.onrender.com/api/bookings/getAll"
     );
 
     const bookingsData = response.data;

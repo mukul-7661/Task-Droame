@@ -19,7 +19,7 @@ function Booking(props) {
     setBooking_id(props.booking_id);
     // console.log(boo)
     Axios.delete(
-      `http://localhost:8800/api/bookings/delete/${props.booking_id}`
+      `https://droame-task-api.onrender.com/api/bookings/delete/${props.booking_id}`
     )
       .then((res) => {
         console.log(res);
@@ -33,7 +33,7 @@ function Booking(props) {
     e.preventDefault();
     // console.log("hello");
 
-    Axios.put("http://localhost:8800/api/bookings/edit", {
+    Axios.put("https://droame-task-api.onrender.com/api/bookings/edit", {
       booking_id: booking_id,
       location_id: location_id,
       drone_shot_id: drone_shot_id,

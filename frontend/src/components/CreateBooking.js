@@ -13,7 +13,7 @@ function CreateBooking() {
   const submithandler = async (e) => {
     e.preventDefault();
     // console.log("hello");
-    Axios.post("http://localhost:8800/api/bookings/create", {
+    Axios.post("https://droame-task-api.onrender.com/api/bookings/create", {
       booking_id: booking_id,
       location_id: location_id,
       drone_shot_id: drone_shot_id,

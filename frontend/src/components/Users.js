@@ -10,7 +10,9 @@ const Users = () => {
   const [users, setUsers] = useState();
 
   const getData = async () => {
-    const response = await Axios.get("http://localhost:8800/api/users/getAll");
+    const response = await Axios.get(
+      "https://droame-task-api.onrender.com/api/users/getAll"
+    );
 
     const usersData = response.data;
     console.log(usersData.length);
